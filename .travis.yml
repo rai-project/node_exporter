@@ -1,9 +1,13 @@
 sudo: false
 
 language: go
-go:
-- 1.8.x
-- tip
+
+matrix:
+  include:
+    - go: 1.10.x
+    - go: tip
+  allow_failures:
+    - go: tip
 
 go_import_path: github.com/prometheus/node_exporter
 
